@@ -2,7 +2,7 @@
   "projectType": "application",
   "root": "apps/demo",
   "sourceRoot": "apps/demo/src",
-  "prefix": "scroll-to-me",
+  "prefix": "app",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",

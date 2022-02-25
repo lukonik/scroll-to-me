@@ -22,12 +22,7 @@ export class ScrollToMeContainerDirective {
     @Optional() @Inject(SCROLL_TO_ME_OPTIONS) private config: ScrollToMeOptions
   ) {}
 
-  scrollTo(
-    key: string,
-    options?: {
-      offset: number;
-    } & ScrollToMeOptions
-  ) {
+  scrollTo(key: string, options?: ScrollToMeOptions) {
     const el = this.scrollToMeService.get(key);
 
     const behavior = options?.behavior || this.config?.behavior || 'smooth';
@@ -46,7 +41,7 @@ export class ScrollToMeContainerDirective {
         top:
           el.nativeElement.offsetTop -
           container.offsetTop -
-          (options?.offset ?? 0),
+          (options?.offset || this.config?.offset || 0),
       });
     }
   }

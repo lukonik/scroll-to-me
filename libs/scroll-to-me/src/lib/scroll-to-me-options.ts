@@ -5,5 +5,6 @@ export const SCROLL_TO_ME_OPTIONS = new InjectionToken<ScrollToMeOptions>(
 );
 
 export interface ScrollToMeOptions {
+  offset?: number;
   behavior?: ScrollBehavior;
 }

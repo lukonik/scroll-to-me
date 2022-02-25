@@ -1,0 +1,14 @@
+<figure
+  class="bg-slate-100 rounded-xl p-8 dark:bg-slate-800 w-96 mb-4"
+  *ngFor="let d of data"
+  [scrollToMe]="d.key"
+>
+  <div class="pt-6 space-y-4">
+    <blockquote>
+      <p class="text-5xl">{{ d.key }}</p>
+    </blockquote>
+    <figcaption>
+      <div>{{ d.content }}</div>
+    </figcaption>
+  </div>
+</figure>
