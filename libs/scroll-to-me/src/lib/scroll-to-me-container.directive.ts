@@ -15,6 +15,9 @@ export class ScrollToMeContainerDirective {
   @Input()
   root = false;
 
+  @Input()
+  options: ScrollToMeOptions | undefined;
+
   constructor(
     private scrollToMeService: ScrollToMeService,
     private el: ElementRef<HTMLElement>,
@@ -22,10 +25,11 @@ export class ScrollToMeContainerDirective {
     @Optional() @Inject(SCROLL_TO_ME_OPTIONS) private config: ScrollToMeOptions
   ) {}
 
-  scrollTo(key: string, options?: ScrollToMeOptions) {
+  scrollTo(key: string) {
     const el = this.scrollToMeService.get(key);
 
-    const behavior = options?.behavior || this.config?.behavior || 'smooth';
+    const behavior =
+      this.options?.behavior || this.config?.behavior || 'smooth';
 
     if (el) {
       const container = (
@@ -41,7 +45,7 @@ export class ScrollToMeContainerDirective {
         top:
           el.nativeElement.offsetTop -
           container.offsetTop -
-          (options?.offset || this.config?.offset || 0),
+          (this.options?.offset || this.config?.offset || 0),
       });
     }
   }
