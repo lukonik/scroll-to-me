@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/scroll-to-me",
+  "sourceRoot": "libs/scroll-to-me/src",
+  "prefix": "scroll-to-me",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/scroll-to-me"],
+      "options": {
+        "project": "libs/scroll-to-me/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/scroll-to-me/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/scroll-to-me/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/scroll-to-me"],
+      "options": {
+        "jestConfig": "libs/scroll-to-me/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/scroll-to-me/src/**/*.ts",
+          "libs/scroll-to-me/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
