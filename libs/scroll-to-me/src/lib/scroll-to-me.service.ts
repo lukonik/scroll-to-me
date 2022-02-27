@@ -4,7 +4,7 @@ import { ElementRef, Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ScrollToMeService {
-  _scrollToMes: Record<string | number, ElementRef<HTMLElement>> = {};
+  private _scrollToMes: Record<string | number, ElementRef<HTMLElement>> = {};
 
   add(key: string | number, el: ElementRef<HTMLElement>) {
     if (this._scrollToMes[key]) {
