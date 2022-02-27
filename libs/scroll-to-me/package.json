@@ -1,6 +1,10 @@
 {
   "name": "@tonyjs/scroll-to-me",
-  "version": "0.0.4",
+  "version": "0.0.5",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lukonik/scroll-to-me"
+  },
   "peerDependencies": {
     "@angular/common": "^13.2.0",
     "@angular/core": "^13.2.0"

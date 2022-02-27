@@ -9,6 +9,7 @@
     "build": "nx build",
     "test": "nx test"
   },
+
   "private": false,
   "dependencies": {
     "@angular/animations": "~13.2.0",
